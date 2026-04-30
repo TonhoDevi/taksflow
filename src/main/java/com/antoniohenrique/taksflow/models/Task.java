@@ -1,4 +1,4 @@
-package com.antoniohenrique.taksflow.model;
+package com.antoniohenrique.taksflow.models;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;

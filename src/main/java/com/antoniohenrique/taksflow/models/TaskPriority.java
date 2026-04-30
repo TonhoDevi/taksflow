@@ -1,4 +1,4 @@
-package com.antoniohenrique.taksflow.model;
+package com.antoniohenrique.taksflow.models;
 
 public enum TaskPriority {
     LOW,

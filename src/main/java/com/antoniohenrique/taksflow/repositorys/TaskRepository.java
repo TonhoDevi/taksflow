@@ -1,7 +1,7 @@
-package com.antoniohenrique.taksflow.repository;
+package com.antoniohenrique.taksflow.repositorys;
 
-import com.antoniohenrique.taksflow.model.Task;
-import com.antoniohenrique.taksflow.model.TaskStatus;
+import com.antoniohenrique.taksflow.models.Task;
+import com.antoniohenrique.taksflow.models.TaskStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,8 +1,9 @@
-package com.antoniohenrique.taksflow.repository;
+package com.antoniohenrique.taksflow.repositorys;
 
-import com.antoniohenrique.taksflow.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import com.antoniohenrique.taksflow.models.User;
 
 import java.util.Optional;
 

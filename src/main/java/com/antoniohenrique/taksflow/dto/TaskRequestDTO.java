@@ -1,7 +1,7 @@
 package com.antoniohenrique.taksflow.dto;
 
-import com.antoniohenrique.taksflow.model.TaskPriority;
-import com.antoniohenrique.taksflow.model.TaskStatus;
+import com.antoniohenrique.taksflow.models.TaskPriority;
+import com.antoniohenrique.taksflow.models.TaskStatus;
 import jakarta.validation.constraints.NotBlank;
 
 import java.time.LocalDate;
