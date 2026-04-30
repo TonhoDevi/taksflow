@@ -1,22 +1,39 @@
-package com.antoniohenrique.taksflow.dto;
+package com.antoniohenrique.taksflow.dtos;
 
 import com.antoniohenrique.taksflow.models.TaskPriority;
 import com.antoniohenrique.taksflow.models.TaskStatus;
-import jakarta.validation.constraints.NotBlank;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
-public class TaskRequestDTO {
-
-    @NotBlank(message = "Título é obrigatório")
+public class TaskResponseDTO {
+    private Long id;
     private String title;
-
     private String description;
     private TaskStatus status;
     private TaskPriority priority;
     private LocalDate dueDate;
+    private LocalDateTime createdAt;
 
-    public TaskRequestDTO() {
+    public TaskResponseDTO() {
+    }
+
+    public TaskResponseDTO(Long id, String title, String description, TaskStatus status, TaskPriority priority, LocalDate dueDate, LocalDateTime createdAt) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.status = status;
+        this.priority = priority;
+        this.dueDate = dueDate;
+        this.createdAt = createdAt;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -57,5 +74,13 @@ public class TaskRequestDTO {
 
     public void setDueDate(LocalDate dueDate) {
         this.dueDate = dueDate;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 }
