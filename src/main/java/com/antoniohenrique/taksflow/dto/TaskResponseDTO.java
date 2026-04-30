@@ -1,53 +1,31 @@
-package com.antoniohenrique.taksflow.model;
+package com.antoniohenrique.taksflow.dto;
 
-import jakarta.persistence.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
+import com.antoniohenrique.taksflow.model.TaskPriority;
+import com.antoniohenrique.taksflow.model.TaskStatus;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "tasks")
-public class Task {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class TaskResponseDTO {
     private Long id;
-
-    @Column(nullable = false)
     private String title;
-
     private String description;
-
-    @Enumerated(EnumType.STRING)
-    private TaskStatus status = TaskStatus.TODO;
-
-    @Enumerated(EnumType.STRING)
-    private TaskPriority priority = TaskPriority.MEDIUM;
-
+    private TaskStatus status;
+    private TaskPriority priority;
     private LocalDate dueDate;
-
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
-
-    @CreationTimestamp
     private LocalDateTime createdAt;
 
-    @UpdateTimestamp
-    private LocalDateTime updatedAt;
-
-    public Task() {
+    public TaskResponseDTO() {
     }
 
-    public Task(String title, String description, TaskStatus status, TaskPriority priority, LocalDate dueDate, User user) {
+    public TaskResponseDTO(Long id, String title, String description, TaskStatus status, TaskPriority priority, LocalDate dueDate, LocalDateTime createdAt) {
+        this.id = id;
         this.title = title;
         this.description = description;
         this.status = status;
         this.priority = priority;
         this.dueDate = dueDate;
-        this.user = user;
+        this.createdAt = createdAt;
     }
 
     public Long getId() {
@@ -98,27 +76,11 @@ public class Task {
         this.dueDate = dueDate;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
     }
 }
