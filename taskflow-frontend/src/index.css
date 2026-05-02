@@ -1,0 +1,104 @@
+:root {
+  --bg-base:      #0b0d10;
+  --bg-surface:   #111419;
+  --bg-elevated:  #181c22;
+  --bg-hover:     #1e232b;
+  --border:       #252a33;
+  --border-light: #2e3540;
+  --text-primary: #e8eaf0;
+  --text-secondary: #8a909c;
+  --text-muted:   #545b6a;
+  --accent:       #f5a623;
+  --accent-dim:   rgba(245, 166, 35, 0.12);
+  --accent-hover: #ffb733;
+  --danger:       #e05252;
+  --danger-dim:   rgba(224, 82, 82, 0.12);
+  --success:      #4caf7d;
+  --success-dim:  rgba(76, 175, 125, 0.12);
+  --info:         #5b8dee;
+  --info-dim:     rgba(91, 141, 238, 0.12);
+  --todo-color:   #8a909c;
+  --progress-color: #5b8dee;
+  --done-color:   #4caf7d;
+  --low-color:    #4caf7d;
+  --medium-color: #f5a623;
+  --high-color:   #e05252;
+  --radius-sm:    4px;
+  --radius:       8px;
+  --radius-lg:    12px;
+  --font-mono:    'DM Mono', monospace;
+  --font-sans:    'DM Sans', sans-serif;
+  --shadow-sm:    0 1px 3px rgba(0,0,0,0.4);
+  --shadow:       0 4px 16px rgba(0,0,0,0.5);
+  --shadow-lg:    0 12px 40px rgba(0,0,0,0.7);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; }
+
+body {
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* Inputs */
+input, select, textarea {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  background: var(--bg-base);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  width: 100%;
+  padding: 0.6rem 0.875rem;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-dim);
+}
+input::placeholder, textarea::placeholder { color: var(--text-muted); }
+select option { background: var(--bg-elevated); }
+
+/* Buttons */
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.15s;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
